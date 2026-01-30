@@ -220,3 +220,7 @@ func getAuthSecret(authPair []string) string {
 	secret := strings.TrimSpace(splited[1])
 	return secret
 }
+
+func NewServer(ctx context.Context, f fs.Fs, opt *Options, vfsOpt *vfscommon.Options, proxyOpt *proxy.Options) (s *Server, err error) {
+	return newServer(ctx, f, opt, vfsOpt, proxyOpt)
+}
